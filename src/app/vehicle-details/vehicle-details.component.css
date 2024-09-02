@@ -1,0 +1,19 @@
+/* vehicle-details.component.css */
+.vehicle-details {
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.vehicle-details p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.vehicle-details strong {
+  display: inline-block;
+  width: 200px;
+}

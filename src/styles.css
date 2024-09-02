@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* Include Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=YourCustomFont:wght@400;700&display=swap');
+
+/* Apply font to the entire application */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+/*sakai-ng*/

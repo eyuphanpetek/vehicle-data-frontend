@@ -1,0 +1,16 @@
+<div class="vehicle-details">
+  <header>
+    <h1>Vehicle Details</h1>
+  </header>
+
+  <div *ngIf="vehicle">
+    <p><strong>License Plate:</strong> {{ vehicle.licensePlate }}</p>
+    <p><strong>Organization Name:</strong> {{ vehicle.organizationName }}</p>
+    <p><strong>Passage Date and Time:</strong> {{ vehicle.passageDateTime | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+    <p><strong>Speed:</strong> {{ vehicle.speed }} km/h</p>
+    <p><strong>Measurement Accuracy:</strong> {{ vehicle.measurementAccuracy }}</p>
+    <p><strong>Radiation Level:</strong> {{ vehicle.radiationLevel }}</p>
+    <p><strong>Pre-Passage Radiation Level:</strong> {{ vehicle.prePassageRadiationLevel }}</p>
+    <p><strong>Post-Passage Radiation Level:</strong> {{ vehicle.postPassageRadiationLevel }}</p>
+  </div>
+</div>
