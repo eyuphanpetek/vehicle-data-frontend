@@ -48,3 +48,11 @@ header {
 .btn:hover {
   background-color: #0056b3;
 }
+
+
+/* Style for the sort icons */
+.p-sort-icon {
+  font-size: 1rem; /* Adjust size as needed */
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}

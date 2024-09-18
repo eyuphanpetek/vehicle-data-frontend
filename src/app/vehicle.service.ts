@@ -7,11 +7,15 @@ import { Vehicle } from './vehicle.model'; // Adjust the import path
     providedIn: 'root'
 })
 export class VehicleService {
-    private apiUrl = 'http://localhost:8080/api/vehicles'; // Replace with your actual API endpoint
+    private apiUrl = 'http://localhost:8080/api/vehicle_data'; // Replace with your actual API endpoint
 
     constructor(private http: HttpClient) {}
 
-    getVehicles(): Observable<any[]> {
-        return this.http.get<any[]>(this.apiUrl);
+    getVehicle(id:string): Observable<Vehicle> {
+        return this.http.get<Vehicle>(`${this.apiUrl}/${id}`);
     }
+
+  updateVehicle(vehicle: Vehicle): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${vehicle.licensePlate}`, vehicle);
+  }
 }

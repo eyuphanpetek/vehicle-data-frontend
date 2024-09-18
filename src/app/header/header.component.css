@@ -1,0 +1,14 @@
+/* Example styling for the header */
+/*:host ::ng-deep .p-toolbar {
+  background-color: #007bff;
+  color: white;
+}*/
+:host ::ng-deep .p-toolbar {
+  background: linear-gradient(to right, #141acf, #c11d1d);
+  color: white; /* Text color */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  line-height: 1px; /* Center text vertically */
+  z-index: 1000; /* Ensure it is above other content */
+}

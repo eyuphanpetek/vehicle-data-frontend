@@ -1,0 +1,64 @@
+/* Ensure the form has proper padding and shadow */
+form {
+  max-width: 600px; /* Adjust this to fit your layout */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Fixed width for the submit button */
+.fixed-width-button {
+  width: 160px;
+}
+
+/* Adjust margin-bottom for fields */
+.p-field {
+  margin-bottom: 1rem; /* Adjust to space out the form fields */
+}
+
+/* Ensure full width of input fields */
+.p-inputtext.p-component {
+  width: 100%;
+}
+
+/* Optional: Add some padding to the form fields for better spacing */
+.p-field input {
+  padding: 0.5rem;
+}
+
+/* Red outline for invalid input, only after interaction or form submission */
+.p-inputtext.ng-invalid.ng-touched, /* Applies red after touch */
+.p-inputtext.ng-invalid.ng-dirty,   /* Applies red after input change */
+.p-inputtext.ng-invalid.ng-submitted { /* Applies red after form submission */
+  border: 2px solid #FF0000; /* Red outline for invalid input */
+}
+
+/* Default border for input fields */
+.p-inputtext {
+  border: 1px solid #ccc;
+}
+
+/* Error message styling */
+.error-message {
+  color: #FF0000; /* Red text for error message */
+  font-size: 0.875em; /* Smaller font size */
+  margin-top: 0.25em;
+  display: flex;
+  align-items: center;
+}
+
+.error-message .pi-exclamation-triangle {
+  color: #FF0000; /* Red icon */
+  margin-right: 0.5em;
+}
+
+/* Form panel */
+.form-panel {
+  max-width: 600px; /* Adjust to fit your layout */
+  margin: 0 auto; /* Center the panel */
+  padding: 1rem;
+}
+
+/* Error message styling for PrimeNG components */
+.p-error {
+  color: red;
+  margin-top: 0.5rem;
+}

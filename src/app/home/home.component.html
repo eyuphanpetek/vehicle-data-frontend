@@ -1,18 +1,31 @@
 <div class="home">
-  <header>
-    <h1>Welcome to Vehicle Tracking</h1>
-    <img src="assets/logo.png" alt="Company Logo" class="logo">
-  </header>
+  <p-card class="p-mb-4 custom-card">
+    <header class="p-d-flex p-ai-center p-jc-between">
+      <img src="assets/logo.png" alt="Company Logo" class="logo">
+      <h1 class="welcome-text">Welcome to OGEM Vehicle Tracking Application</h1>
+    </header>
+  </p-card>
 
-  <section class="vehicle-list">
-    <h2>Vehicle List</h2>
-    <div class="vehicle-grid">
-      <div class="vehicle-card" *ngFor="let vehicle of vehicles">
-        <h3>Id: {{ vehicle.id }}</h3>
-        <p>License plate: {{ vehicle.licensePlate }}</p>
-        <p>Organization Name: {{ vehicle.organizationName }}</p>
-        <a [routerLink]="['/vehicles', vehicle.id]" class="btn">View Details</a>
-      </div>
-    </div>
-  </section>
+  <p-table [value]="filteredVehicles" [paginator]="true" [rows]="5" [responsive]="true" [sortMode]="'single'">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="licensePlate">License Plate <p-sortIcon field="licensePlate"></p-sortIcon></th>
+        <th pSortableColumn="organizationName">Organization Name <p-sortIcon field="organizationName"></p-sortIcon></th>
+        <th pSortableColumn="speed">Speed <p-sortIcon field="speed"></p-sortIcon></th>
+        <th pSortableColumn="measurementAccuracy">Measurement Accuracy <p-sortIcon field="measurementAccuracy"></p-sortIcon></th>
+        <th>Details</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-vehicle>
+      <tr>
+        <td>{{ vehicle.licensePlate }}</td>
+        <td>{{ vehicle.organizationName }}</td>
+        <td>{{ vehicle.speed }}</td>
+        <td>{{ vehicle.measurementAccuracy }}</td>
+        <td>
+          <a [routerLink]="['/vehicles', vehicle.id]" class="btn">View Details</a>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

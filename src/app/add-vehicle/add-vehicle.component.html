@@ -1,0 +1,97 @@
+<p-panel header="Add New Vehicle" class="p-shadow-3 p-mb-4 form-panel">
+  <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm" class="p-d-flex p-flex-column p-ai-center p-p-4 p-shadow-2 p-border-round">
+
+    <!-- License Plate -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="licensePlate" class="p-d-block">License Plate</label>
+      <input type="text" id="licensePlate" [(ngModel)]="vehicle.licensePlate" name="licensePlate" class="p-inputtext p-component p-w-full" required
+             #licensePlate="ngModel"
+             [ngClass]="{'p-invalid': (licensePlate.touched || vehicleForm.submitted) && licensePlate.invalid}">
+      <div *ngIf="(licensePlate.touched || vehicleForm.submitted) && licensePlate.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> License plate is required.
+      </div>
+    </div>
+
+    <!-- Organization Name -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="organizationName" class="p-d-block">Organization Name</label>
+      <input type="text" id="organizationName" [(ngModel)]="vehicle.organizationName" name="organizationName" class="p-inputtext p-component p-w-full" required
+             #organizationName="ngModel"
+             [ngClass]="{'p-invalid': (organizationName.touched || vehicleForm.submitted) && organizationName.invalid}">
+      <div *ngIf="(organizationName.touched || vehicleForm.submitted) && organizationName.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Organization name is required.
+      </div>
+    </div>
+
+    <!-- Speed -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="speed" class="p-d-block">Speed (km/h)</label>
+      <input type="number" id="speed" [(ngModel)]="vehicle.speed" name="speed" class="p-inputtext p-component p-w-full" required min="0"
+             #speed="ngModel"
+             [ngClass]="{'p-invalid': (speed.touched || vehicleForm.submitted) && speed.invalid}">
+      <div *ngIf="(speed.touched || vehicleForm.submitted) && speed.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Speed is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Passage Date and Time -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="passageDateTime" class="p-d-block">Passage Date and Time</label>
+      <input type="datetime-local" id="passageDateTime" [(ngModel)]="vehicle.passageDateTime" name="passageDateTime" class="p-inputtext p-component p-w-full" required
+             #passageDateTime="ngModel"
+             [ngClass]="{'p-invalid': (passageDateTime.touched || vehicleForm.submitted) && passageDateTime.invalid}">
+      <div *ngIf="(passageDateTime.touched || vehicleForm.submitted) && passageDateTime.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Passage date and time are required.
+      </div>
+    </div>
+
+    <!-- Measurement Accuracy -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="measurementAccuracy" class="p-d-block">Measurement Accuracy (%)</label>
+      <input type="number" id="measurementAccuracy" [(ngModel)]="vehicle.measurementAccuracy" name="measurementAccuracy" class="p-inputtext p-component p-w-full" required min="0"
+             #measurementAccuracy="ngModel"
+             [ngClass]="{'p-invalid': (measurementAccuracy.touched || vehicleForm.submitted) && measurementAccuracy.invalid}">
+      <div *ngIf="(measurementAccuracy.touched || vehicleForm.submitted) && measurementAccuracy.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Measurement accuracy is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Radiation Level -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="radiationLevel" class="p-d-block">Radiation Level (μSv)</label>
+      <input type="number" id="radiationLevel" [(ngModel)]="vehicle.radiationLevel" name="radiationLevel" class="p-inputtext p-component p-w-full" required min="0"
+             #radiationLevel="ngModel"
+             [ngClass]="{'p-invalid': (radiationLevel.touched || vehicleForm.submitted) && radiationLevel.invalid}">
+      <div *ngIf="(radiationLevel.touched || vehicleForm.submitted) && radiationLevel.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Radiation level is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Pre-Passage Radiation Level -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="prePassageRadiationLevel" class="p-d-block">Pre-Passage Radiation Level (μSv)</label>
+      <input type="number" id="prePassageRadiationLevel" [(ngModel)]="vehicle.prePassageRadiationLevel" name="prePassageRadiationLevel" class="p-inputtext p-component p-w-full" required min="0"
+             #prePassageRadiationLevel="ngModel"
+             [ngClass]="{'p-invalid': (prePassageRadiationLevel.touched || vehicleForm.submitted) && prePassageRadiationLevel.invalid}">
+      <div *ngIf="(prePassageRadiationLevel.touched || vehicleForm.submitted) && prePassageRadiationLevel.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Pre-passage radiation level is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Post-Passage Radiation Level -->
+    <div class="p-field p-mb-4 p-w-12 p-md:8">
+      <label for="postPassageRadiationLevel" class="p-d-block">Post-Passage Radiation Level (μSv)</label>
+      <input type="number" id="postPassageRadiationLevel" [(ngModel)]="vehicle.postPassageRadiationLevel" name="postPassageRadiationLevel" class="p-inputtext p-component p-w-full" required min="0"
+             #postPassageRadiationLevel="ngModel"
+             [ngClass]="{'p-invalid': (postPassageRadiationLevel.touched || vehicleForm.submitted) && postPassageRadiationLevel.invalid}">
+      <div *ngIf="(postPassageRadiationLevel.touched || vehicleForm.submitted) && postPassageRadiationLevel.invalid" class="p-error">
+        <i class="pi pi-exclamation-circle"></i> Post-passage radiation level is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="p-button p-component p-button-primary p-w-160" style="width: 160px;" [disabled]="!vehicleForm.form.valid">
+      <span class="p-button-label">Add Vehicle</span>
+    </button>
+  </form>
+</p-panel>
